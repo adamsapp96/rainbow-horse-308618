@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>House Tour Checklist — Burkhalter Rd, Statesboro</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --paper: #faf8f4;
+    --accent: #c4501a;
+    --accent-light: #f5ede8;
+    --warn: #e8a020;
+    --warn-light: #fdf4e3;
+    --good: #2a7a4b;
+    --good-light: #e8f5ee;
+    --rule: #d8d4cc;
+    --muted: #7a7570;
+    --section-bg: #f2efe9;
+  }
+
+:root { color-scheme: light only; }
+
+- { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+color-scheme: light;
+background-color: #faf8f4;
+color: #1a1a1a;
+}
+
+body {
+color-scheme: light;
+background: var(–paper);
+color: var(–ink);
+font-size: 15px;
+line-height: 1.5;
+}
+
+/* ── HEADER ── */
+.header {
+background: var(–ink);
+color: var(–paper);
+padding: 24px 20px 20px;
+position: relative;
+overflow: hidden;
+}
+.header::before {
+content: ‘’;
+position: absolute;
+right: -20px; top: -20px;
+width: 120px; height: 120px;
+background: var(–accent);
+border-radius: 50%;
+opacity: 0.15;
+}
+.header-eyebrow {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: #aaa;
+margin-bottom: 6px;
+}
+.header-title {
+font-family: ‘DM Serif Display’, serif;
+font-size: 26px;
+line-height: 1.15;
+margin-bottom: 4px;
+}
+.header-sub {
+font-size: 13px;
+color: #bbb;
+margin-bottom: 14px;
+}
+.header-tags {
+display: flex;
+flex-wrap: wrap;
+gap: 6px;
+}
+.tag {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.08em;
+padding: 3px 8px;
+border-radius: 3px;
+background: rgba(255,255,255,0.1);
+color: #ccc;
+}
+.tag.red { background: rgba(196,80,26,0.3); color: #f4a080; }
+
+/* ── OFFER BOX ── */
+.offer-bar {
+background: var(–accent);
+color: white;
+padding: 14px 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 12px;
+}
+.offer-bar .label {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+opacity: 0.8;
+margin-bottom: 2px;
+}
+.offer-bar .amount {
+font-family: ‘DM Serif Display’, serif;
+font-size: 22px;
+}
+.offer-bar .ceiling {
+text-align: right;
+}
+.offer-bar .ceiling .amount {
+font-size: 16px;
+opacity: 0.8;
+text-decoration: line-through;
+}
+
+/* ── SECTIONS ── */
+.section {
+margin: 0;
+border-bottom: 1px solid var(–rule);
+}
+.section-header {
+display: flex;
+align-items: center;
+gap: 10px;
+padding: 16px 20px 12px;
+cursor: pointer;
+user-select: none;
+background: var(–section-bg);
+}
+.section-num {
+font-family: ‘DM Mono’, monospace;
+font-size: 11px;
+color: var(–muted);
+min-width: 20px;
+}
+.section-title {
+font-family: ‘DM Serif Display’, serif;
+font-size: 17px;
+flex: 1;
+}
+.priority {
+font-family: ‘DM Mono’, monospace;
+font-size: 9px;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+padding: 2px 7px;
+border-radius: 2px;
+font-weight: 500;
+}
+.priority.high { background: #fde8e8; color: #c0392b; }
+.priority.med { background: var(–warn-light); color: #b07d10; }
+.priority.low { background: var(–good-light); color: var(–good); }
+
+.section-body {
+padding: 0 20px 16px;
+}
+
+/* ── CHECKLIST ITEMS ── */
+.check-group {
+margin-top: 12px;
+}
+.check-group-label {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(–muted);
+margin-bottom: 6px;
+padding-bottom: 4px;
+border-bottom: 1px solid var(–rule);
+}
+.check-item {
+display: flex;
+align-items: flex-start;
+gap: 10px;
+padding: 7px 0;
+border-bottom: 1px solid #ece9e2;
+}
+.check-item:last-child { border-bottom: none; }
+.check-box {
+width: 20px;
+height: 20px;
+min-width: 20px;
+border: 1.5px solid #c8c4bc;
+border-radius: 3px;
+background: white;
+cursor: pointer;
+position: relative;
+margin-top: 1px;
+-webkit-appearance: none;
+appearance: none;
+}
+.check-box:checked {
+background: var(–ink);
+border-color: var(–ink);
+}
+.check-box:checked::after {
+content: ‘’;
+position: absolute;
+left: 5px; top: 2px;
+width: 6px; height: 10px;
+border: 2px solid white;
+border-top: none;
+border-left: none;
+transform: rotate(45deg);
+}
+.check-label {
+font-size: 14px;
+line-height: 1.4;
+flex: 1;
+}
+.check-label .warn {
+color: var(–accent);
+font-weight: 600;
+}
+
+/* ── RED FLAGS ── */
+.redflag-box {
+background: #fff5f2;
+border-left: 3px solid var(–accent);
+border-radius: 0 6px 6px 0;
+padding: 10px 12px;
+margin-top: 10px;
+}
+.redflag-box .rf-title {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(–accent);
+margin-bottom: 6px;
+}
+.redflag-box .rf-item {
+font-size: 13px;
+padding: 3px 0;
+color: #8b2a15;
+display: flex;
+gap: 6px;
+}
+.redflag-box .rf-item::before { content: ‘→’; }
+
+/* ── ASK AGENT BOX ── */
+.ask-box {
+background: #f0f4ff;
+border-left: 3px solid #4a6fa5;
+border-radius: 0 6px 6px 0;
+padding: 10px 12px;
+margin-top: 10px;
+}
+.ask-box .ask-title {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: #4a6fa5;
+margin-bottom: 6px;
+}
+.ask-box .ask-q {
+font-family: ‘DM Serif Display’, serif;
+font-size: 14px;
+font-style: italic;
+color: #2a3a5a;
+line-height: 1.4;
+}
+.ask-box .ask-note {
+font-size: 12px;
+color: #5a6a8a;
+margin-top: 4px;
+}
+
+/* ── COST WARNING ── */
+.cost-note {
+font-family: ‘DM Mono’, monospace;
+font-size: 11px;
+color: var(–muted);
+margin-top: 8px;
+padding: 6px 10px;
+background: var(–warn-light);
+border-radius: 4px;
+}
+.cost-note strong { color: var(–ink); }
+
+/* ── OFFER STRATEGY ── */
+.offer-section {
+background: var(–ink);
+color: var(–paper);
+padding: 20px;
+}
+.offer-section-title {
+font-family: ‘DM Serif Display’, serif;
+font-size: 20px;
+margin-bottom: 16px;
+color: #f0ece4;
+}
+.offer-tier {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 12px 0;
+border-bottom: 1px solid #333;
+}
+.offer-tier:last-child { border-bottom: none; }
+.offer-tier-label {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+margin-bottom: 2px;
+}
+.offer-tier-label.green { color: #6fcf97; }
+.offer-tier-label.yellow { color: #f2c94c; }
+.offer-tier-label.red { color: #eb5757; }
+.offer-tier-desc { font-size: 12px; color: #999; }
+.offer-tier-price {
+font-family: ‘DM Serif Display’, serif;
+font-size: 24px;
+color: #f0ece4;
+}
+
+/* ── WALK AWAY ── */
+.walkaway {
+background: #1a0a06;
+border: 1px solid var(–accent);
+border-radius: 6px;
+padding: 14px 16px;
+margin-top: 16px;
+}
+.walkaway-title {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(–accent);
+margin-bottom: 8px;
+}
+.walkaway-item {
+font-size: 13px;
+color: #f4a080;
+padding: 3px 0;
+display: flex;
+gap: 8px;
+}
+.walkaway-item::before { content: ‘✕’; }
+
+/* ── DOCS NEEDED ── */
+.docs-section {
+padding: 20px;
+background: var(–good-light);
+border-bottom: 1px solid var(–rule);
+}
+.docs-title {
+font-family: ‘DM Serif Display’, serif;
+font-size: 18px;
+color: var(–good);
+margin-bottom: 12px;
+}
+.doc-item {
+display: flex;
+align-items: center;
+gap: 10px;
+padding: 8px 0;
+border-bottom: 1px solid #c8e8d8;
+font-size: 14px;
+}
+.doc-item:last-child { border-bottom: none; }
+.doc-item.critical { font-weight: 600; color: var(–accent); }
+
+/* ── NOTES AREA ── */
+.notes-section {
+padding: 20px;
+}
+.notes-title {
+font-family: ‘DM Serif Display’, serif;
+font-size: 18px;
+margin-bottom: 14px;
+}
+.note-lines {
+display: flex;
+flex-direction: column;
+gap: 0;
+}
+.note-line {
+border-bottom: 1px solid var(–rule);
+height: 36px;
+width: 100%;
+}
+
+/* ── FOOTER ── */
+.footer {
+padding: 16px 20px;
+background: var(–section-bg);
+text-align: center;
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+color: var(–muted);
+letter-spacing: 0.08em;
+}
+
+/* ── PRINT ── */
+@media print {
+body { font-size: 12px; background: white; }
+.header { background: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.offer-bar { background: #c4501a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.offer-section { background: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.section-header { background: #f2efe9 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.redflag-box { background: #fff5f2 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.ask-box { background: #f0f4ff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.docs-section { background: #e8f5ee !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.section { page-break-inside: avoid; }
+.check-box { border: 1.5px solid #999 !important; }
+}
+
+@media (min-width: 600px) {
+body { max-width: 480px; margin: 0 auto; box-shadow: 0 0 40px rgba(0,0,0,0.12); }
+}
+</style>
+
+</head>
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+  <div class="header-eyebrow">Tour Checklist · Friday Mar 28</div>
+  <div class="header-title">Burkhalter Rd<br>Statesboro, GA</div>
+  <div class="header-sub">3 bed · 1 bath · 1,294 sqft · Built 1970 · Listed $196,500</div>
+  <div class="header-tags">
+    <span class="tag">FHA Loan</span>
+    <span class="tag">$10k DPA</span>
+    <span class="tag red">Shared Well ⚠</span>
+    <span class="tag red">Septic ⚠</span>
+    <span class="tag">No HOA</span>
+    <span class="tag">New Roof</span>
+  </div>
+</div>
+
+<!-- OFFER BAR -->
+
+<div class="offer-bar">
+  <div>
+    <div class="label">Opening Offer</div>
+    <div class="amount">$174,900</div>
+  </div>
+  <div class="ceiling">
+    <div class="label">Hard Ceiling</div>
+    <div class="amount">$180,000</div>
+  </div>
+</div>
+
+<!-- SECTION 1: EXTERIOR -->
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <span class="section-title">Exterior — Before You Enter</span>
+    <span class="priority med">Medium</span>
+  </div>
+  <div class="section-body">
+    <div class="check-group">
+      <div class="check-group-label">Roof & Structure</div>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Roof lines — no sagging or uneven ridges</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Shingles — no curling, patching, or mismatched sections</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Brick — no stair-step cracks (diagonal = settlement 🚩)</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Gutters — present, clean, not falling off</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Trees — none hanging directly over roof</span></label>
+    </div>
+    <div class="check-group">
+      <div class="check-group-label">Drainage</div>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Yard slopes AWAY from the house</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">No low/wet/soggy spots in yard <span class="warn">(septic red flag)</span></span></label>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 2: FIRST WALKTHROUGH -->
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <span class="section-title">First Impression Walk</span>
+    <span class="priority low">Quick</span>
+  </div>
+  <div class="section-body">
+    <div class="check-group">
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">No musty/moldy smell <span class="warn">(crawlspace moisture)</span></span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Floors feel level — no obvious slope while walking</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Gut feeling: well-maintained, not a "quick cleanup"</span></label>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: STRUCTURE -->
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <span class="section-title">Structure & Floors</span>
+    <span class="priority high">High Priority</span>
+  </div>
+  <div class="section-body">
+    <div class="check-group">
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Walk slowly in each room — no bounce or flex</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Floors visually level — no noticeable slope</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">All doors open/close normally — no sticking</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">No cracks above door frames or along wall seams</span></label>
+    </div>
+    <div class="redflag-box">
+      <div class="rf-title">🚩 Red Flags</div>
+      <div class="rf-item">Noticeable slope across any room</div>
+      <div class="rf-item">Doors swing open/closed on their own</div>
+      <div class="rf-item">Diagonal cracks above door frames</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 4: CRAWLSPACE -->
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <span class="section-title">Crawlspace</span>
+    <span class="priority high">High Priority</span>
+  </div>
+  <div class="section-body">
+    <div class="check-group">
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Ask for recent inspection report or photos</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">No mold smell near floors/vents</span></label>
+    </div>
+    <div class="ask-box">
+      <div class="ask-title">Ask Agent Exactly</div>
+      <div class="ask-q">"Has the crawlspace been inspected recently? Any moisture or structural concerns?"</div>
+    </div>
+    <div class="redflag-box">
+      <div class="rf-title">🚩 Red Flags</div>
+      <div class="rf-item">Moisture / standing water</div>
+      <div class="rf-item">Mold smell near floor level</div>
+      <div class="rf-item">Termite tubes or damage</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 5: SEPTIC -->
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <span class="section-title">Septic System</span>
+    <span class="priority high">CRITICAL</span>
+  </div>
+  <div class="section-body">
+    <div class="check-group">
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Pumped within last 3–5 years</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">No backup history</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">No wet/soggy spots in yard</span></label>
+    </div>
+    <div class="ask-box">
+      <div class="ask-title">Ask Agent Exactly</div>
+      <div class="ask-q">"When was the septic last pumped and inspected? Any history of backups?"</div>
+    </div>
+    <div class="cost-note">⚠ <strong>Replacement cost:</strong> $5,000 – $15,000</div>
+    <div class="redflag-box">
+      <div class="rf-title">🚩 Red Flags</div>
+      <div class="rf-item">"Not sure" or "it's been a while"</div>
+      <div class="rf-item">Wet or soggy patches in yard</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 6: SHARED WELL -->
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <span class="section-title">Shared Well</span>
+    <span class="priority high">CRITICAL</span>
+  </div>
+  <div class="section-body">
+    <div class="check-group">
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Written/legal agreement exists — get a copy</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Confirmed: how many homes share it?</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Repair responsibility is clearly defined</span></label>
+    </div>
+    <div class="ask-box">
+      <div class="ask-title">Ask Agent Exactly</div>
+      <div class="ask-q">"Can you explain the shared well setup? Is there a written agreement defining maintenance responsibility?"</div>
+    </div>
+    <div class="redflag-box">
+      <div class="rf-title">🚩 Red Flags</div>
+      <div class="rf-item">"It's informal" or "they just split it"</div>
+      <div class="rf-item">No documentation exists</div>
+      <div class="rf-item">Only verbal arrangements</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 7: HVAC -->
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">07</span>
+    <span class="section-title">HVAC System</span>
+    <span class="priority high">High Priority</span>
+  </div>
+  <div class="section-body">
+    <div class="check-group">
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Turn on heat & AC — confirm it runs</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Feel airflow from vents in each room</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">No loud rattling or grinding sounds</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Unit age confirmed (look for tag or ask agent)</span></label>
+    </div>
+    <div class="cost-note">⚠ <strong>Replacement cost:</strong> $5,000 – $8,000</div>
+  </div>
+</div>
+
+<!-- SECTION 8: ELECTRICAL -->
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">08</span>
+    <span class="section-title">Electrical</span>
+    <span class="priority med">Medium</span>
+  </div>
+  <div class="section-body">
+    <div class="check-group">
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Outlets — all 3-prong (2-prong = old wiring 🚩)</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">All light switches work</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">No flickering lights</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Electrical panel — looks organized, no visible issues</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Loose/exposed wiring visible? <span class="warn">(saw one in photos)</span></span></label>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 9: PLUMBING -->
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">09</span>
+    <span class="section-title">Plumbing</span>
+    <span class="priority med">Medium</span>
+  </div>
+  <div class="section-body">
+    <div class="check-group">
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">All sinks — turn on, check pressure and drain speed</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Toilet flushes fully and refills</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Under-sink cabinets — check for leaks or staining</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Water pressure feels normal</span></label>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 10: KITCHEN & BATH -->
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">10</span>
+    <span class="section-title">Kitchen & Bathroom</span>
+    <span class="priority low">Cosmetic</span>
+  </div>
+  <div class="section-body">
+    <div class="check-group">
+      <div class="check-group-label">Kitchen</div>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Island/peninsula solid — no movement</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Appliances included: oven/range + refrigerator ✓</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Can I live with this for 1–2 years?</span></label>
+    </div>
+    <div class="check-group">
+      <div class="check-group-label">Bathroom (1 only)</div>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Caulking around tub/shower intact</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">No soft floor spots near toilet</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Is this fine for now? (lifestyle reality check)</span></label>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 11: GUT CHECK -->
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">11</span>
+    <span class="section-title">Final Gut Check</span>
+    <span class="priority low">Before Leaving</span>
+  </div>
+  <div class="section-body">
+    <div class="check-group">
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Do I feel comfortable in this space?</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">Nothing felt hidden or like a cover-up</span></label>
+      <label class="check-item"><input type="checkbox" class="check-box"><span class="check-label">I'm not just trying to convince myself</span></label>
+    </div>
+  </div>
+</div>
+
+<!-- DOCS NEEDED -->
+
+<div class="docs-section">
+  <div class="docs-title">Request Before Offer</div>
+  <label class="doc-item"><input type="checkbox" class="check-box">&nbsp; Seller disclosure form</label>
+  <label class="doc-item critical"><input type="checkbox" class="check-box">&nbsp; ⚠ Well agreement — written documentation</label>
+  <label class="doc-item critical"><input type="checkbox" class="check-box">&nbsp; ⚠ Septic pump/inspection records</label>
+  <label class="doc-item"><input type="checkbox" class="check-box">&nbsp; Roof documentation / warranty</label>
+  <label class="doc-item"><input type="checkbox" class="check-box">&nbsp; HVAC age / service history</label>
+</div>
+
+<!-- OFFER STRATEGY -->
+
+<div class="offer-section">
+  <div class="offer-section-title">Offer Strategy</div>
+  <div class="offer-tier">
+    <div>
+      <div class="offer-tier-label green">Opening Offer</div>
+      <div class="offer-tier-desc">Clean, reasonable, not insulting</div>
+    </div>
+    <div class="offer-tier-price">$174,900</div>
+  </div>
+  <div class="offer-tier">
+    <div>
+      <div class="offer-tier-label yellow">Negotiation Range</div>
+      <div class="offer-tier-desc">Only if systems check out</div>
+    </div>
+    <div class="offer-tier-price">$178k</div>
+  </div>
+  <div class="offer-tier">
+    <div>
+      <div class="offer-tier-label red">Hard Ceiling</div>
+      <div class="offer-tier-desc">Only if everything is solid</div>
+    </div>
+    <div class="offer-tier-price">$180k</div>
+  </div>
+
+  <div class="walkaway">
+    <div class="walkaway-title">Walk Away If</div>
+    <div class="walkaway-item">Septic is questionable</div>
+    <div class="walkaway-item">Well agreement is informal / undocumented</div>
+    <div class="walkaway-item">Crawlspace has moisture or damage</div>
+    <div class="walkaway-item">HVAC is old with no service history</div>
+    <div class="walkaway-item">You feel uneasy — trust your gut</div>
+  </div>
+</div>
+
+<!-- NOTES -->
+
+<div class="notes-section">
+  <div class="notes-title">Notes from the Tour</div>
+  <div class="note-lines">
+    <div class="note-line"></div>
+    <div class="note-line"></div>
+    <div class="note-line"></div>
+    <div class="note-line"></div>
+    <div class="note-line"></div>
+    <div class="note-line"></div>
+    <div class="note-line"></div>
+    <div class="note-line"></div>
+  </div>
+</div>
+
+<div class="footer">MLS #10683196 · Georgia MLS · Listed by Platinum Landmark Realty</div>
+
+</body>
+</html>
